@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<title> Even Odd Finder App </title>
+		<style>
+			* {font-size:50px;}
+			body {background-color:lightblue;}
+			h1 {background-color:black;color:white;width:50%;border-radius:40px;}
+			.btn {background-color:black;color:white;margin-left:100px;width:20%;}
+			.btn:hover {color:red;}
+		</style>
+
+
+	</head>
+	<body>
+	<center>
+		<h1> Even Odd Finder App </h1>
+		<form onsubmit="check()">
+		<input type="number" placeholder="Enter Integer" id="num">
+		<br><br>
+		<input type="submit" value="M1" class="btn"/>
+		<input type="submit" value="M2" class="btn"/>
+		<input type="submit" value="M3" class="btn"/>
+
+		</form>
+			<h2 id="msg"/>
+		<script>
+			function check()
+			{
+				event.preventDefault()
+				let action=document.activeElement.value;
+				let num=document.getElementById("num");
+				let msg=document.getElementById("msg");
+				
+				if (num.value==="")
+				{
+					alert("you did not enter the number");
+					msg.innerHTML="";
+					num.focus();	
+					return;
+				}
+				
+				let n =parseInt(num.value);
+	
+				if (action === "M1")
+				{
+					let res = n % 2 === 0 ? "Even" : "ODD";
+					msg.innerHTML="Res 1 = " + res;
+
+				}
+				else if (action === "M2")
+				{
+					let res="";
+					if (n % 2 === 0)
+						res="EVEN"
+					else
+						res="ODD"
+					msg.innerHTML="Res 2 = " + res;
+
+				}
+				else if (action === "M3")
+				{
+					let res="";
+					switch(n % 2)
+					{
+						case   0:	res="EVEN";	break;
+						case   1:	res="ODD";	break;
+						case  -1:	res="ODD";	break;
+					
+					}
+					msg.innerHTML="Res 3 = " + res;
+
+
+
+				}
+					
+			
+
+
+
+			}
+
+
+		</script>
+
+
+	</center>	
+	</body>
+
+
+
+
+
+</html>
